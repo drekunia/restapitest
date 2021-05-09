@@ -34,8 +34,9 @@ type Result struct {
 }
 
 func main() {
+	var err error
 	dsn := "host=localhost user=postgres password=postgres dbname=restapitest port=5432"
-	db, err := gorm.Open("postgres", dsn)
+	db, err = gorm.Open("postgres", dsn)
 
 	if err != nil {
 		log.Println("Connection failed", err)
